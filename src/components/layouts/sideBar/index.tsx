@@ -1,5 +1,4 @@
 import { Menu } from "antd";
-import { useState } from "react";
 import "./index.scss";
 import { type SidebarProps } from "../../../types/interfaces/propInterfaces/index";
 import { ReactComponent as ExpandIcon } from "../../../assets/icons/expand.svg";
