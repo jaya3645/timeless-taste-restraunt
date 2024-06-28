@@ -4,8 +4,8 @@ const SideNavRoutes: React.FC = () => {
   return (
     <>
       <Routes>
-        <Route path="/home" element={"hello"}></Route>
-        <Route path="add-new-device" element="devices"></Route>
+        <Route path="/" element={"hello"}></Route>
+        <Route path="/home" element="devices"></Route>
       </Routes>
     </>
   );

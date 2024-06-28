@@ -22,6 +22,7 @@ const PageLayout: React.FC = () => {
       key: "1",
       icon: <UserOutlined />,
       label: "nav 1",
+      path: "/home",
     },
     {
       key: "2",

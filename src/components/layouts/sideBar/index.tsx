@@ -10,25 +10,25 @@ const Sidebar: React.FC<SidebarProps> = ({
   menu,
   changeSideBar,
 }) => {
-  const [selectedKeys, setSelectedKeys] = useState<any>(() => {
-    const storedKeyPath = localStorage.getItem("keyPath");
-    console.log("storedKeyPath", storedKeyPath);
-    if (storedKeyPath) {
-      try {
-        const keyPathArray = [storedKeyPath.toString()];
-        return keyPathArray;
-      } catch (error) {
-        return undefined;
-      }
-    } else {
-      return undefined;
-    }
-  });
+  // const [selectedKeys, setSelectedKeys] = useState<any>(() => {
+  //   const storedKeyPath = localStorage.getItem("keyPath");
+  //   console.log("storedKeyPath", storedKeyPath);
+  //   if (storedKeyPath) {
+  //     try {
+  //       const keyPathArray = [storedKeyPath.toString()];
+  //       return keyPathArray;
+  //     } catch (error) {
+  //       return undefined;
+  //     }
+  //   } else {
+  //     return undefined;
+  //   }
+  // });
 
-  const redirectionUrlHandler = ({ keyPath, e }: any): any => {
-    console.log("keyPath", keyPath);
-    localStorage.setItem("keyPath", keyPath[0]);
-  };
+  // const redirectionUrlHandler = ({ keyPath, e }: any): any => {
+  //   console.log("keyPath", keyPath);
+  //   localStorage.setItem("keyPath", keyPath[0]);
+  // };
 
   const toggleCollapse = (): any => {
     changeSideBar(!collapsed);
@@ -50,10 +50,10 @@ const Sidebar: React.FC<SidebarProps> = ({
         }
       >
         <Menu
-          onClick={redirectionUrlHandler}
+          // onClick={redirectionUrlHandler}
           mode="vertical"
           items={menu}
-          selectedKeys={selectedKeys}
+          // selectedKeys={selectedKeys}
         />
       </div>
     </>
