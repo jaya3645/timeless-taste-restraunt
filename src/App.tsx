@@ -1,8 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { useDispatch } from "react-redux";
+import { getAllCategoriesList } from "./redux/actions";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllCategoriesList());
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
