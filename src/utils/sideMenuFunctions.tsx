@@ -17,7 +17,7 @@ function getItem(
 export const getSideNavMenu = (data: any): any => {
   const result = [] as any;
   data?.map((item: any) => {
-    result.push(
+    return result.push(
       ...[
         getItem(
           item?.key,
