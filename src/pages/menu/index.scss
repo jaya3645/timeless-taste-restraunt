@@ -17,3 +17,39 @@
     }
   }
 }
+
+.categoryMenu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  span {
+    cursor: pointer;
+  }
+}
+.mealList {
+  height: calc(100vh - 200px);
+  overflow-y: scroll;
+  grid-gap: 30px;
+  display: grid;
+  gap: 30px;
+  .ant-avatar {
+    height: 100px;
+    width: 100px;
+  }
+  .ant-card .ant-card-meta {
+    align-items: center;
+  }
+}
+.favouriteList {
+  overflow-y: scroll;
+  grid-gap: 30px;
+  display: grid;
+  gap: 30px;
+  .ant-avatar {
+    height: 100px;
+    width: 100px;
+  }
+  .ant-card .ant-card-meta {
+    align-items: center;
+  }
+}

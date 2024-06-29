@@ -1,6 +1,9 @@
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import * as types from "../../types";
-import { getAllCategoriesListServices } from "../../services/menuServices";
+import {
+  getAllCategoriesListServices,
+  getCategoryMenuByCategoryNameServices,
+} from "../../services/menuServices";
 
 export function* getAllCategoriesListSaga({
   type,
@@ -22,8 +25,37 @@ export function* getAllCategoriesListSaga({
   }
 }
 
+export function* getCategoryMenuByCategoryNameSaga({
+  type,
+  payload,
+}: {
+  type: string;
+  payload: any;
+}): Generator<any> {
+  try {
+    const getCategoryMenuByCategoryName = yield call(
+      getCategoryMenuByCategoryNameServices,
+      payload
+    );
+    yield put({
+      type: types.GET_CATEGORY_MENU_BY_CATEGORY_NAME_SUCCESS,
+      response: getCategoryMenuByCategoryName,
+    });
+  } catch (error: any) {
+    yield put({
+      type: types.GET_CATEGORY_MENU_BY_CATEGORY_NAME_FAILURE,
+    });
+  }
+}
+
 export function* menuSaga(): any {
   yield all([
     takeLatest(types.GET_ALL_CATEGORIES_LIST, getAllCategoriesListSaga),
+  ]);
+  yield all([
+    takeLatest(
+      types.GET_CATEGORY_MENU_BY_CATEGORY_NAME,
+      getCategoryMenuByCategoryNameSaga
+    ),
   ]);
 }

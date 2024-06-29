@@ -1,5 +1,6 @@
 import Menu from "../pages/menu/index";
 import Home from "../pages/home";
+import Favourite from "../pages/favourites";
 import { Route, Routes } from "react-router-dom";
 
 const SideNavRoutes: React.FC = () => {
@@ -9,7 +10,7 @@ const SideNavRoutes: React.FC = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/menu" element={<Menu />}></Route>
-        <Route path="/favourite" element="favourite"></Route>
+        <Route path="/favourite" element={<Favourite />}></Route>
       </Routes>
     </>
   );

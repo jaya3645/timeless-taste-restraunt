@@ -1,6 +1,8 @@
 const initialState: any = {
   root: {
     allCategoriesList: [],
+    categoryMenuByCategoryName: [],
+    favoritesList: [],
   },
 };
 

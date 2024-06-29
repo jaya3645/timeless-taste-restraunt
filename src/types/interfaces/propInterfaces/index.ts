@@ -17,3 +17,10 @@ export interface SidebarProps {
   setSearchValue: Function;
   searchValue: any;
 }
+
+export interface CategoryMenuProps {
+  selectedCategory: string;
+  setSelectedCategory: Function;
+  setFavorites: Function;
+  favorites: any;
+}
