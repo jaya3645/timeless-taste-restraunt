@@ -2,16 +2,19 @@ import { Divider, Layout } from "antd";
 import { useState } from "react";
 import {
   UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
+  HeartOutlined,
+  AppstoreOutlined,
 } from "@ant-design/icons";
 import "./index.scss";
 import Sidebar from "../../components/layouts/sideBar";
 import SideNavRoutes from "../../routes";
+import { getSideNavMenu } from "../../utils/sideMenuFunctions";
+import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
 
 const PageLayout: React.FC = () => {
   const { Header, Content, Sider } = Layout;
   const [collapsed, setCollapsed] = useState(true);
+  const [searchValue, setSearchValue] = useState("");
 
   const onCollapse = (sidebarCollapse: any): any => {
     setCollapsed(sidebarCollapse);
@@ -20,21 +23,36 @@ const PageLayout: React.FC = () => {
   const menuItem: any = [
     {
       key: "1",
-      icon: <UserOutlined />,
-      label: "nav 1",
+      icon: <HomeIcon />,
+      label: "Home",
       path: "/home",
     },
     {
       key: "2",
-      icon: <VideoCameraOutlined />,
-      label: "nav 2",
+      icon: <AppstoreOutlined />,
+      label: "Menu",
+      path: "/menu",
     },
     {
       key: "3",
+      icon: <HeartOutlined />,
+      label: "Favourite",
+      path: "/favourite",
+    },
+    {
+      key: "4",
       icon: <UploadOutlined />,
-      label: "nav 3",
+      label: "Random Meal",
+      path: "/random-meal",
+    },
+    {
+      key: "5",
+      icon: <UploadOutlined />,
+      label: "About Us",
+      path: "/rabout-us",
     },
   ];
+
   return (
     <>
       <Layout className="layoutWrapper">
@@ -50,17 +68,14 @@ const PageLayout: React.FC = () => {
         >
           <Sidebar
             collapsed={collapsed}
-            menu={menuItem}
+            menu={getSideNavMenu(menuItem)}
             changeSideBar={onCollapse}
+            setSearchValue={setSearchValue}
+            searchValue={searchValue}
           />
         </Sider>
         <Layout className="site-layout">
           <Header className="header">
-            {/* <Breadcrumb
-              key={pathParams["*"]}
-              separator=">"
-              routes={getBreadcrumbItem(paramsArray)}
-            /> */}
             <div className="header-setting-container">
               <div className="customer-container">
                 {/* <img

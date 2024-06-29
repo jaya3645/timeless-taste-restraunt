@@ -1,0 +1,14 @@
+.homeWrapper {
+  height: calc(100vh - 70px);
+  &__Content {
+    width: 50%;
+    margin: 30px auto;
+    .ant-btn.ant-btn-default {
+      width: 100%;
+      border-radius: 10px;
+      background: #2e53ea;
+      color: white;
+      height: 45px;
+    }
+  }
+}

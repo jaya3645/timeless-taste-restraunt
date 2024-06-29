@@ -1,0 +1,19 @@
+.menuList {
+  height: calc(100vh - 200px);
+  overflow-y: scroll;
+  grid-gap: 30px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  .circle.normal-circle {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    img {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+}

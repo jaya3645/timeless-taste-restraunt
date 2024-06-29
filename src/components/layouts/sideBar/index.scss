@@ -9,7 +9,6 @@
 
 .filter-navigator {
   @include flex-center;
-  justify-content: end !important;
   gap: 14px;
   padding: 15px 11px;
   height: 48px;

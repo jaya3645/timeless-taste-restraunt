@@ -10,18 +10,14 @@ export default function menuReducer(
       state = {
         ...state,
         root: {
-          ...state.root,
+          ...state,
         },
       };
       return state;
     case types.GET_ALL_CATEGORIES_LIST_SUCCESS:
-      console.log("action", action);
       state = {
         ...state,
-        root: {
-          ...state.root,
-          allCategoriesList: action.response.data.categories,
-        },
+        allCategoriesList: action.response.data.categories,
       };
       return state;
     default:

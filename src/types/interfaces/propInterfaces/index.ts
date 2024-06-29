@@ -5,7 +5,7 @@ export interface MenuData {
   // breadcrumb: string;
   key: string;
   icon: ReactNode;
-  //   path: string;
+  path: string;
   //   exact: boolean;
   //   children: MenuData[];
 }
@@ -14,4 +14,6 @@ export interface SidebarProps {
   collapsed: boolean;
   menu: MenuData[];
   changeSideBar: Function;
+  setSearchValue: Function;
+  searchValue: any;
 }

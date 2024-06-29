@@ -31,11 +31,15 @@
 .mb-0 {
   margin-bottom: 0;
 }
-input[type='number'].hide-sorting::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
+input[type="number"].hide-sorting::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.mr-8{
+.mr-8 {
   margin-right: 8px;
+}
+.container {
+  height: calc(100vh - 50px);
+  padding: 10px;
 }
