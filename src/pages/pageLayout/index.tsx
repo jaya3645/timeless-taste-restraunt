@@ -50,7 +50,7 @@ const PageLayout: React.FC = () => {
       key: "5",
       icon: <UploadOutlined />,
       label: "About Us",
-      path: "/rabout-us",
+      path: "/about-us",
     },
   ];
 

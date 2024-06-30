@@ -4,6 +4,7 @@ const initialState: any = {
     categoryMenuByCategoryName: [],
     favoritesList: [],
     randomMeal: [],
+    feedbackList: [],
   },
 };
 

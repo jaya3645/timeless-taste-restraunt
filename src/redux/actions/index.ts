@@ -17,3 +17,8 @@ export const getAllFavourtiesList = (payload: any): any => ({
 export const getRandomMeal = (): any => ({
   type: types.GET_RANDOM_MEAL,
 });
+
+export const getAllFeedabackList = (payload: any): any => ({
+  type: types.GET_ALL_FEEDBACK_LIST,
+  payload: payload,
+});

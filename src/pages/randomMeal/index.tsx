@@ -61,6 +61,7 @@ const RandomMeal = () => {
               <Card
                 key={index}
                 hoverable
+                bordered
                 cover={
                   <img
                     alt="example"

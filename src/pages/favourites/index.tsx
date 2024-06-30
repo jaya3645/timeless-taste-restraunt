@@ -30,8 +30,6 @@ const Favourite: React.FC = () => {
     dispatch(getAllFavourtiesList(favouritesList));
   }, [dispatch, favouritesList]);
 
-  console.log("check", favouritesList);
-
   return (
     <div className="container">
       <Card className="homeWrapper">

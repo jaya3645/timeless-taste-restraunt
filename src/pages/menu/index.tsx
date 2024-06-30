@@ -42,10 +42,8 @@ const Menu: React.FC = () => {
   };
 
   const onCategoryClickHandler = (category: string): any => {
-    console.log("category", category);
     setSelectedCategory(category);
   };
-  console.log("favorites", favorites);
 
   return (
     <>

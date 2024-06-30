@@ -48,6 +48,13 @@ export default function menuReducer(
         randomMeal: action.response.data.meals,
       };
       return state;
+    case types.GET_ALL_FEEDBACK_LIST:
+      state = {
+        ...state,
+        feedbackList: action.payload,
+      };
+      return state;
+
     default:
       return state;
   }
