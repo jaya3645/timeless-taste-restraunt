@@ -1,4 +1,4 @@
-import { Divider, Layout } from "antd";
+import { Layout } from "antd";
 import { useState } from "react";
 import {
   UploadOutlined,
@@ -15,7 +15,6 @@ import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
 const PageLayout: React.FC = () => {
   const { Header, Content, Sider } = Layout;
   const [collapsed, setCollapsed] = useState(true);
-  const [searchValue, setSearchValue] = useState("");
 
   const onCollapse = (sidebarCollapse: any): any => {
     setCollapsed(sidebarCollapse);
@@ -23,31 +22,31 @@ const PageLayout: React.FC = () => {
 
   const menuItem: any = [
     {
-      key: "1",
+      key: "home",
       icon: <HomeIcon />,
       label: "Home",
       path: "/home",
     },
     {
-      key: "2",
+      key: "menu",
       icon: <AppstoreOutlined />,
       label: "Menu",
       path: "/menu",
     },
     {
-      key: "3",
+      key: "favourite",
       icon: <HeartOutlined />,
       label: "Favourite",
       path: "/favourite",
     },
     {
-      key: "4",
+      key: "random-meal",
       icon: <SyncOutlined />,
       label: "Random Meal",
       path: "/random-meal",
     },
     {
-      key: "5",
+      key: "about-us",
       icon: <UploadOutlined />,
       label: "About Us",
       path: "/about-us",
@@ -71,38 +70,11 @@ const PageLayout: React.FC = () => {
             collapsed={collapsed}
             menu={getSideNavMenu(menuItem)}
             changeSideBar={onCollapse}
-            setSearchValue={setSearchValue}
-            searchValue={searchValue}
           />
         </Sider>
         <Layout className="site-layout">
           <Header className="header">
-            <div className="header-setting-container">
-              <div className="customer-container">
-                {/* <img
-                  src={getApiServiceName(
-                    window.location.hostname,
-                    serviceNameLogoData
-                  )}
-                  alt="customer-logo"
-                /> */}
-              </div>
-              <Divider type="vertical" />
-              <div className="profile-container customer-container">
-                <div>{/* <BellOutlined /> */}</div>
-                {/* <Popover content={content}>
-                  {loggedInUserDetails?.profileImage ? (
-                    <img
-                      style={{ width: 30 }}
-                      src={loggedInUserDetails?.profileImage}
-                      alt="logo"
-                    />
-                  ) : (
-                    <UserOutlined />
-                  )}
-                </Popover> */}
-              </div>
-            </div>
+            <div className="header-setting-container"></div>
           </Header>
           <Content className="site-layout-content">
             <SideNavRoutes />

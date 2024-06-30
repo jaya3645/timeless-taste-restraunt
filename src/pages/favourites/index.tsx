@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { getAllFavourtiesList } from "redux/actions";
+import { isFavorite, toggleFavorite } from "utils/commonFunction";
 
 const Favourite: React.FC = () => {
   const { Title } = Typography;
@@ -14,17 +15,6 @@ const Favourite: React.FC = () => {
   );
 
   const [favouritesList, setFavouritesList] = useState(allFavouriteList);
-
-  const toggleFavorite = (meal: any) => {
-    setFavouritesList((prev: any) =>
-      prev.some((fav: any) => fav.idMeal === meal.idMeal)
-        ? prev.filter((fav: any) => fav.idMeal !== meal.idMeal)
-        : [...prev, meal]
-    );
-  };
-
-  const isFavorite = (mealId: string) =>
-    favouritesList.some((fav: any) => fav.idMeal === mealId);
 
   useEffect(() => {
     dispatch(getAllFavourtiesList(favouritesList));
@@ -49,13 +39,15 @@ const Favourite: React.FC = () => {
                   avatar={<Avatar src={item.strMealThumb} />}
                   title={item.strMeal}
                   description={
-                    isFavorite(item.idMeal) ? (
+                    isFavorite(item.idMeal, favouritesList) ? (
                       <HeartFilled
                         style={{ color: "red" }}
-                        onClick={() => toggleFavorite(item)}
+                        onClick={() => toggleFavorite(item, setFavouritesList)}
                       />
                     ) : (
-                      <HeartOutlined onClick={() => toggleFavorite(item)} />
+                      <HeartOutlined
+                        onClick={() => toggleFavorite(item, setFavouritesList)}
+                      />
                     )
                   }
                 />

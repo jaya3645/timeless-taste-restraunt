@@ -107,20 +107,19 @@ const AboutUs = () => {
           <Divider />
           <Title level={3}>Feedback List</Title>
           <Divider />
-          <List
-            dataSource={feedbackList}
-            renderItem={(item: any, index) => (
-              <List.Item key={index}>
-                <List.Item.Meta
-                  title={item.firstName}
-                  description={item.feedback}
-                />
-              </List.Item>
-            )}
-          />
-          {allFeedbackList.map((item: any, index: any) => {
-            return <div key={index}>{item.firstName}</div>;
-          })}
+          <div className="feedbaclList">
+            <List
+              dataSource={feedbackList}
+              renderItem={(item: any, index) => (
+                <List.Item key={index}>
+                  <List.Item.Meta
+                    title={item.firstName}
+                    description={item.feedback}
+                  />
+                </List.Item>
+              )}
+            />
+          </div>
         </Card>
       </div>
     </>

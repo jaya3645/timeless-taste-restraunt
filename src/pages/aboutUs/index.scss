@@ -5,3 +5,7 @@
   color: white;
   height: 45px;
 }
+.feedbackList {
+  height: calc(100vh - 770px);
+  overflow-y: scroll;
+}

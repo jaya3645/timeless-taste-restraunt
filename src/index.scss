@@ -15,11 +15,11 @@ span,
 label,
 input,
 a {
-  font-family: 'Inter', sans-serif !important;
+  font-family: "Inter", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   ::placeholder {
-      font-family: 'Inter', sans-serif !important;
+    font-family: "Inter", sans-serif !important;
   }
 }
 body {
@@ -48,3 +48,9 @@ body {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.ant-empty {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
