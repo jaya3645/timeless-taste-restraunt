@@ -50,16 +50,10 @@ const RandomMeal = () => {
             return (
               <Card
                 key={index}
+                style={{ width: "80%" }}
                 hoverable
                 bordered
-                cover={
-                  <img
-                    alt="example"
-                    src={item.strMealThumb}
-                    height={300}
-                    width={200}
-                  />
-                }
+                cover={<img alt="example" src={item.strMealThumb} />}
               >
                 <Meta
                   title={

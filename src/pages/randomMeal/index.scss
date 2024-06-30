@@ -1,8 +1,10 @@
+@import "../../styles/global-settings.scss";
 .randomMeal {
-  width: 50%;
+  width: 40%;
   margin: auto;
   height: calc(100vh - 200px);
   overflow-y: scroll;
+  @include flex-center;
   .ant-card-meta-title {
     display: flex;
     gap: 10px;

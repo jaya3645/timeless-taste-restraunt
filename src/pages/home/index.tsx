@@ -48,8 +48,8 @@ const Home: React.FC = () => {
                 </Row>
               </Col>
               <Col span={24}>
-                <Row>
-                  <Col span={24}>
+                <Row className="randomMealBtn">
+                  <Col span={12}>
                     <Button
                       onClick={(e) => OnMenuClickHanlder(e)}
                       className="fs-20"
