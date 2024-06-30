@@ -1,0 +1,10 @@
+.randomMeal {
+  width: 50%;
+  margin: auto;
+  height: calc(100vh - 200px);
+  overflow-y: scroll;
+  .ant-card-meta-title {
+    display: flex;
+    gap: 10px;
+  }
+}

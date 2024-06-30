@@ -13,3 +13,7 @@ export const getAllFavourtiesList = (payload: any): any => ({
   type: types.GET_ALL_FAVOURITES_LIST,
   payload: payload,
 });
+
+export const getRandomMeal = (): any => ({
+  type: types.GET_RANDOM_MEAL,
+});

@@ -34,6 +34,7 @@ const CategoryMenuListing: React.FC<CategoryMenuProps> = ({
 
   const isFavorite = (mealId: string) =>
     favorites.some((fav: any) => fav.idMeal === mealId);
+
   return (
     <>
       <div className="categoryMenu">

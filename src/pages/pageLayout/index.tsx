@@ -4,6 +4,7 @@ import {
   UploadOutlined,
   HeartOutlined,
   AppstoreOutlined,
+  SyncOutlined,
 } from "@ant-design/icons";
 import "./index.scss";
 import Sidebar from "../../components/layouts/sideBar";
@@ -41,7 +42,7 @@ const PageLayout: React.FC = () => {
     },
     {
       key: "4",
-      icon: <UploadOutlined />,
+      icon: <SyncOutlined />,
       label: "Random Meal",
       path: "/random-meal",
     },

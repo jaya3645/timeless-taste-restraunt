@@ -22,3 +22,13 @@ export const getCategoryMenuByCategoryNameServices = async (
     throw new Error(error);
   }
 };
+
+export const getRandomMealServices = async (): Promise<any> => {
+  try {
+    const response = Api.get(`random.php`);
+    return await Promise.resolve(response);
+  } catch (error: any) {
+    message.error(error?.response?.data?.message);
+    throw new Error(error);
+  }
+};

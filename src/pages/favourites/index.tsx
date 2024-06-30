@@ -41,7 +41,7 @@ const Favourite: React.FC = () => {
           className="favouriteList pd-10"
           style={{
             height:
-              allFavouriteList.length > 4 ? "calc(100vh - 200px)" : "auto",
+              allFavouriteList.length > 3 ? "calc(100vh - 200px)" : "auto",
           }}
         >
           {allFavouriteList.map((item: any, index: number) => {

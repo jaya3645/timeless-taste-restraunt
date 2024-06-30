@@ -31,10 +31,21 @@ export default function menuReducer(
       };
       return state;
     case types.GET_ALL_FAVOURITES_LIST:
-      console.log("action", action);
       state = {
         ...state,
         favoritesList: action.payload,
+      };
+      return state;
+    case types.GET_RANDOM_MEAL:
+      state = {
+        ...state,
+        randomMeal: [],
+      };
+      return state;
+    case types.GET_RANDOM_MEAL_SUCCESS:
+      state = {
+        ...state,
+        randomMeal: action.response.data.meals,
       };
       return state;
     default:

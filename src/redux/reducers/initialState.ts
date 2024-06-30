@@ -3,6 +3,7 @@ const initialState: any = {
     allCategoriesList: [],
     categoryMenuByCategoryName: [],
     favoritesList: [],
+    randomMeal: [],
   },
 };
 

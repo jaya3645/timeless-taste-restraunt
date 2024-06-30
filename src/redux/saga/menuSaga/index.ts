@@ -3,6 +3,7 @@ import * as types from "../../types";
 import {
   getAllCategoriesListServices,
   getCategoryMenuByCategoryNameServices,
+  getRandomMealServices,
 } from "../../services/menuServices";
 
 export function* getAllCategoriesListSaga({
@@ -48,6 +49,26 @@ export function* getCategoryMenuByCategoryNameSaga({
   }
 }
 
+export function* getRandomMealSaga({
+  type,
+  payload,
+}: {
+  type: string;
+  payload: any;
+}): Generator<any> {
+  try {
+    const getRandomMeal = yield call(getRandomMealServices);
+    yield put({
+      type: types.GET_RANDOM_MEAL_SUCCESS,
+      response: getRandomMeal,
+    });
+  } catch (error: any) {
+    yield put({
+      type: types.GET_RANDOM_MEAL_FAILURE,
+    });
+  }
+}
+
 export function* menuSaga(): any {
   yield all([
     takeLatest(types.GET_ALL_CATEGORIES_LIST, getAllCategoriesListSaga),
@@ -58,4 +79,5 @@ export function* menuSaga(): any {
       getCategoryMenuByCategoryNameSaga
     ),
   ]);
+  yield all([takeLatest(types.GET_RANDOM_MEAL, getRandomMealSaga)]);
 }
