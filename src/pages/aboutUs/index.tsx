@@ -106,8 +106,8 @@ const AboutUs = () => {
           </Form>
           <Divider />
           <Title level={3}>Feedback List</Title>
-          <Divider />
-          <div className="feedbaclList">
+          {/* <Divider /> */}
+          <div className="feedbackList">
             <List
               dataSource={feedbackList}
               renderItem={(item: any, index) => (
