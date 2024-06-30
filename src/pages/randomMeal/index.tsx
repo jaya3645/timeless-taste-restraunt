@@ -1,5 +1,4 @@
 import { Button, Card, Divider, Typography } from "antd";
-import Meta from "antd/es/card/Meta";
 import "./index.scss";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -49,46 +48,54 @@ const RandomMeal = () => {
             const isExpanded = expandedDescriptions[item?.strCategory];
             return (
               <>
-                <Card key={index} hoverable bordered>
-                  <div>
-                    <img alt="example" src={item.strMealThumb} />
-                  </div>
-                  <Meta
-                    title={
-                      <>
-                        <span>{item.strMeal}</span>
-                        {isFavorite(item.idMeal, favouritesList) ? (
-                          <HeartFilled
-                            style={{ color: "red" }}
-                            onClick={() =>
-                              toggleFavorite(item, setFavouritesList)
-                            }
-                          />
-                        ) : (
-                          <HeartOutlined
-                            onClick={() =>
-                              toggleFavorite(item, setFavouritesList)
-                            }
-                          />
-                        )}
-                      </>
-                    }
-                    description={
-                      <>
-                        {isExpanded
-                          ? item?.strInstructions
-                          : item?.strInstructions.substring(0, 50) + "..."}
-                        <span
-                          onClick={(e) =>
-                            toggleDescription(item?.strCategory, e)
+                <Card
+                  key={index}
+                  hoverable
+                  bordered
+                  className="randomMeal__card"
+                >
+                  <div className="randomMeal__container">
+                    <div className="randomMeal__image">
+                      <img
+                        alt="example"
+                        src={item.strMealThumb}
+                        width={"100%"}
+                        height={"100%"}
+                      />
+                    </div>
+                    <div className="title">
+                      <span className="fs-18 fw-500">{item.strMeal}</span>
+                      {isFavorite(item.idMeal, favouritesList) ? (
+                        <HeartFilled
+                          style={{ color: "red" }}
+                          onClick={() =>
+                            toggleFavorite(item, setFavouritesList)
                           }
-                          className="toggleDescription fw-600"
-                        >
-                          {isExpanded ? " Show less" : " Read more"}
-                        </span>
-                      </>
-                    }
-                  />
+                        />
+                      ) : (
+                        <HeartOutlined
+                          onClick={() =>
+                            toggleFavorite(item, setFavouritesList)
+                          }
+                        />
+                      )}
+                    </div>
+                    <div className="description">
+                      {isExpanded ? (
+                        <div className="expandedDescription">
+                          {item?.strInstructions}
+                        </div>
+                      ) : (
+                        item?.strInstructions.substring(0, 50) + "..."
+                      )}
+                      <span
+                        onClick={(e) => toggleDescription(item?.strCategory, e)}
+                        className="toggleDescription fw-600"
+                      >
+                        {isExpanded ? " Show less" : " Read more"}
+                      </span>
+                    </div>
+                  </div>
                 </Card>
                 <Button onClick={() => dispatch(getRandomMeal())}>
                   Random

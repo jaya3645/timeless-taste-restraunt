@@ -2,24 +2,19 @@
 .randomMeal {
   width: 40%;
   margin: auto;
-  height: calc(100vh - 200px);
-  overflow-y: scroll;
   flex-direction: column;
   gap: 20px;
   @include flex-center;
-  .ant-card {
+  &__card {
     width: 100%;
-    img {
-      width: 100%;
-    }
   }
-  .ant-card-meta-title {
+  &__image {
+    height: 300px;
+  }
+  .title {
+    padding: 20px 0;
     display: flex;
-    gap: 10px;
-  }
-  .ant-card-meta-description {
-    overflow-y: scroll;
-    height: calc(100vh - 635px);
+    gap: 20px;
   }
   .ant-btn.ant-btn-default {
     width: 100%;
@@ -27,5 +22,9 @@
     background: #2e53ea;
     color: white;
     height: 45px;
+  }
+  .expandedDescription {
+    height: calc(100vh - 730px);
+    overflow-y: scroll;
   }
 }
