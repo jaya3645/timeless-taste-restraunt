@@ -4,9 +4,28 @@
   margin: auto;
   height: calc(100vh - 200px);
   overflow-y: scroll;
+  flex-direction: column;
+  gap: 20px;
   @include flex-center;
+  .ant-card {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
   .ant-card-meta-title {
     display: flex;
     gap: 10px;
+  }
+  .ant-card-meta-description {
+    overflow-y: scroll;
+    height: calc(100vh - 635px);
+  }
+  .ant-btn.ant-btn-default {
+    width: 100%;
+    border-radius: 10px;
+    background: #2e53ea;
+    color: white;
+    height: 45px;
   }
 }

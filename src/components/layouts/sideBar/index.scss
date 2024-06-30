@@ -31,48 +31,6 @@
   background-color: #f1f3fc;
 }
 
-.ant-menu-submenu.ant-menu-submenu-popup {
-  ul.ant-menu.ant-menu-sub {
-    .ant-menu-item.ant-menu-item-active:hover {
-      background-color: #f1f3fc !important;
-      svg,
-      a,
-      span {
-        color: black;
-      }
-    }
-
-    .ant-menu-submenu-active.ant-menu-submenu-open,
-    .ant-menu-submenu-title:hover {
-      background-color: #f1f3fc !important;
-      svg,
-      a,
-      span {
-        color: black;
-      }
-    }
-
-    .ant-menu-item.ant-menu-item-selected {
-      background-color: $primary-4 !important;
-      svg,
-      a,
-      span {
-        color: white;
-        stroke: white;
-      }
-    }
-
-    .ant-menu-submenu-title {
-      overflow: visible !important;
-      svg,
-      a,
-      span {
-        color: black;
-      }
-    }
-  }
-}
-
 .ant-menu-title-content {
   a {
     color: black;
