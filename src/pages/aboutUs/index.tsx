@@ -113,7 +113,7 @@ const AboutUs = () => {
               renderItem={(item: any, index) => (
                 <List.Item key={index}>
                   <List.Item.Meta
-                    title={item.firstName}
+                    title={item.firstName + item.lastName}
                     description={item.feedback}
                   />
                 </List.Item>
